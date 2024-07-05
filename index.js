@@ -1,3 +1,5 @@
+let quizScore = document.getElementById("quizNumber");
+
 
 function recommend(){
     

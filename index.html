@@ -9,38 +9,41 @@
 
 </head>
 <body>
-    <h1>The quizzard of Oz</h1>
+    <h1>The Quizzard Of Oz</h1>
     <h2></h2>
-        <h3 id ="question1"></h3>
-        <select>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
+        <h3 id ="question1" class="questions">How many eyes does a honeybee have?</h3>
+        <select id="question1-answers">
+            <option>4</option>
+            <option>5</option> <!--Answer-->
+            <option>6</option>
+            <option>7</option>
         </select>
 
-        <h3 id="question2"></h3>
-        <select>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
+        <h3 id="question2" class="questions">What is the chemical symbol for Gold?</h3>
+        <select id="question2-answers">
+            <option>Cl</option>
+            <option>Pb</option>
+            <option>Au</option> <!--Answer-->
+            <option>Gd</option>
+            <option>Go</option>
         </select>
 
-        <h3 id="question3"></h3>
-        <select>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
-            <option></option>
+        <h3 id="question3" class="questions">What is a female donkey called?</h3>
+        <select id="question3-answers">
+            <option>Jenny</option> <!--Answer-->
+            <option>Sue</option>
+            <option>Patricia</option>
+            <option>Melony</option>
+            <option>Rebecca</option>
         </select>
 
-        <button type="submit" onclick="recommend()">Submit</button>
-        <button>Randomize</button>
+
+        
+        <button type="submit" onclick="submit()">Submit</button>
+        
 
         <h3 id="quizScore">Your quiz score:</h3>
+        <h2 id ="quizNumber">0</h2>
 
     <script src="index.js"></script> 
 </body>
