@@ -9,3 +9,18 @@ button{
     width: 100px;
     display: block;
 }
+
+.introHide{
+    display: none;
+    
+}
+
+/* Showing and hiding middle screen */
+.middle-screen{
+    display: none;
+}
+
+.showMiddle{
+    display: block;
+    font-size: 2.5rem;
+}

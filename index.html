@@ -10,8 +10,21 @@
 </head>
 <body>
     <h1>The Quizzard Of Oz</h1>
-    <h2>Enter quiz team name:</h2>
-    <textarea placeholder="Team Name"></textarea>
+    
+    <div class="intro">
+        <h2>Enter quiz team name:</h2>
+        <textarea placeholder="Team Name" id="enteredTeamName"></textarea>
+        <button id="submitTeamName">Submit Team Name</button>
+    </div>
+
+    <div class="middle-screen">
+        <h2 id="welcome-message"></h2>
+        <button id="continueButton">Continue</button>
+    </div>
+    
+
+    
+    <div class="quiz-questions">
         <h3 id ="question1" class="questions">How many eyes does a honeybee have?</h3>
         <select id="question1-answers">
             <option>4</option>
@@ -45,6 +58,9 @@
 
         <h3 id="quizScore">Your quiz score:</h3>
         <h2 id ="quizNumber">0</h2>
+
+    </div>
+    
 
     <script src="index.js"></script> 
 </body>
