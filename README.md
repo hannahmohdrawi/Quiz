@@ -4,6 +4,7 @@ A webpage designed to return a song based off genre and mood. for the user to ch
 ## Description
 This code was created as part of a mini project to practice HTML, CSS and JavaScript.
 It is focused on the interactivity of the page designed for the user to answer questions individually displaying their results and answers.
+The focus of this project was to hide different sections and display these upon addition of an event listener. 
 
 ## Languages used:
 * HTML
