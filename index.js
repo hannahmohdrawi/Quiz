@@ -24,3 +24,12 @@ function showMiddleScreen(teamName){
 
     continueScreen.classList.add("showMiddle");
 }
+
+function showQuestions(){
+    let questionScreen = document.getElementsByClassName("quiz-questions");
+
+    for (let i = 0; i < questionScreen.length; i++){
+        questionScreen[i].classList.add("showQuestions");
+    }
+    
+}
