@@ -25,11 +25,30 @@ function showMiddleScreen(teamName){
     continueScreen.classList.add("showMiddle");
 }
 
-function showQuestions(){
-    let questionScreen = document.getElementsByClassName("quiz-questions");
+function showQuestionScreen(){
+    //Problem with this 
+    let firstQuestion = document.getElementById("question1");
 
-    for (let i = 0; i < questionScreen.length; i++){
-        questionScreen[i].classList.add("showQuestions");
+    firstQuestion.classList.add("showQuestions");
+
+    showNextQuestion();
+}
+
+let currentQuestionIndex = 0;
+
+function showNextQuestion(){
+    let questions = document.getElementsByClassName("questions");
+    
+    if(currentQuestionIndex < questions.length){
+        questions[currentQuestionIndex].classList.add("showQuestions");
+        currentQuestionIndex;
     }
     
+}
+
+function incrementScore(){
+    //On submit, increment score and show next question
+    let count = document.getElementById("quizScore");
+
+    count ++;
 }
