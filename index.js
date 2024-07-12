@@ -7,9 +7,6 @@ teamSubmissionButton.addEventListener("click", teamNameSubmission);
 function teamNameSubmission(){
     let teamName = document.getElementById("enteredTeamName").value;
     let intro = document.getElementsByClassName("intro")[0];
-    
-
-
     intro.classList.add("introHide");
 
     showMiddleScreen(teamName);
@@ -17,24 +14,19 @@ function teamNameSubmission(){
 
 function showMiddleScreen(teamName){
     let continueScreen = document.getElementsByClassName("middle-screen")[0];
-    
-
     let welcomeMsg = document.getElementById("welcome-message");
     welcomeMsg.textContent = `Welcome ${teamName}! 🎈`
-
     continueScreen.classList.add("showMiddle");
 }
 
 function showQuestionScreen(){
     //Problem with this 
-    let firstQuestion = document.getElementById("question1");
-
-    firstQuestion.classList.add("showQuestions");
-
-    showNextQuestion();
+    document.querySelector(".middle-screen").classList.remove("showMiddle");
+    document.querySelector(".quiz-questions").classList.add("showQuestions");
 }
 
 let currentQuestionIndex = 0;
+let score = 0;
 
 function showNextQuestion(){
     let questions = document.getElementsByClassName("questions");
