@@ -28,6 +28,51 @@ function showQuestionScreen(){
 let currentQuestionIndex = 0;
 let score = 0;
 
+function submitAnswers(){
+    let correctAnswers = {
+        question1: "5",
+        question2: "Au",
+        question3: "Jenny"
+    };
+
+    let questions = document.getElementsByClassName("questions");
+    let question1Answer = document.getElementById("question1-answers").value;
+    let question2Answer = document.getElementById("question2-answers").value;
+    let question3Answer = document.getElementById("question3-answers").value;
+
+    if (question1Answer === correctAnswers.question1){
+        score++;
+    };
+
+    if (question2Answer === correctAnswers.question2){
+        score++;
+    };
+
+    if (question3Answer === correctAnswers.question3){
+        score++;
+    };
+
+
+    //Fix
+    document.getElementById("quizScore").textContent = score;
+
+    for (let i = 0; i < questions.length; i++) {
+        questions[i].classList.remove("showQuestions");
+    }
+
+    document.querySelector(".quiz-questions").classList.remove("showQuestions");
+    document.getElementById("quizScore").classList.add("showQuestions");
+    document.getElementById("quizNumber").classList.add("showQuestions");
+
+
+
+}
+
+
+
+
+
+
 function showNextQuestion(){
     let questions = document.getElementsByClassName("questions");
     
