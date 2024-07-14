@@ -25,7 +25,6 @@ function showQuestionScreen(){
     document.querySelector(".quiz-questions").classList.add("showQuestions");
 }
 
-let currentQuestionIndex = 0;
 let score = 0;
 
 function submitAnswers(){
@@ -68,24 +67,18 @@ function submitAnswers(){
 
 }
 
-
-
-
-
+let currentQuestionIndex = 0;
 
 function showNextQuestion(){
-    let questions = document.getElementsByClassName("questions");
+    let allQuestions = document.getElementsByClassName("quiz-questions");
     
-    if(currentQuestionIndex < questions.length){
-        questions[currentQuestionIndex].classList.add("showQuestions");
-        currentQuestionIndex;
+    if(currentQuestionIndex < allQuestions.length){
+        allQuestions[currentQuestionIndex].classList.add("showQuestions");
+        currentQuestionIndex++;
+    }
+
+    if(currentQuestionIndex > 0){
+        allQuestions[currentQuestionIndex -1].classList.remove("showQuestions");
     }
     
-}
-
-function incrementScore(){
-    //On submit, increment score and show next question
-    let count = document.getElementById("quizScore");
-
-    count ++;
 }
