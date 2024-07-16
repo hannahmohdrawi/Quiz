@@ -35,12 +35,13 @@ function submitAnswers(){
     };
 
     let questions = document.getElementsByClassName("questions");
-    let question1Answer = document.getElementById("question1-answers").value;
-    let question2Answer = document.getElementById("question2-answers").value;
-    let question3Answer = document.getElementById("question3-answers").value;
+    let question1Answer = document.querySelector('input[name = "question1-answers"]:checked');
+    let question2Answer = document.querySelector('input[name = "question2-answers"]:checked');
+    let question3Answer = document.querySelector('input[name = "question3-answers"]:checked');
 
     if (question1Answer === correctAnswers.question1){
         score++;
+        console.log("Hello");
     };
 
     if (question2Answer === correctAnswers.question2){
@@ -55,30 +56,30 @@ function submitAnswers(){
     //Fix
     document.getElementById("quizScore").textContent = score;
 
+    /*
     for (let i = 0; i < questions.length; i++) {
         questions[i].classList.remove("showQuestions");
     }
+    */
 
     document.querySelector(".quiz-questions").classList.remove("showQuestions");
     document.getElementById("quizScore").classList.add("showQuestions");
     document.getElementById("quizNumber").classList.add("showQuestions");
 
-
-
 }
 
 let currentQuestionIndex = 0;
 
+
 function showNextQuestion(){
-    let allQuestions = document.getElementsByClassName("quiz-questions");
+    let allQuestions = document.getElementsByClassName("question");
     
+    if(currentQuestionIndex > 0){
+        allQuestions[currentQuestionIndex - 1].classList.remove("showQuestions");
+    }
+
     if(currentQuestionIndex < allQuestions.length){
         allQuestions[currentQuestionIndex].classList.add("showQuestions");
         currentQuestionIndex++;
     }
-
-    if(currentQuestionIndex > 0){
-        allQuestions[currentQuestionIndex -1].classList.remove("showQuestions");
-    }
-    
 }

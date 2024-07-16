@@ -29,10 +29,10 @@
         
         <div id="question1-answers">
             
-            <input type="radio">4</input>
-            <input type="radio">5</input> <!--Answer-->
-            <input type="radio">6</input>
-            <input type="radio">7</input>
+            <label><input type="radio" value="option1">4</label>
+            <label><input type="radio" value="option2">5</label> <!--Answer-->
+            <label><input type="radio" value="option3">6</label>
+            <label><input type="radio" value="option4">7</label>
             
         </div>
 
@@ -40,10 +40,10 @@
         
         <div id="question2-answers">
 
-            <input type="radio">Go</input>
-            <input type="radio">Pb</input> 
-            <input type="radio">Au</input> <!--Answer-->
-            <input type="radio">Gd</input>
+            <label><input type="radio" value="option1">Go</label>
+            <label><input type="radio" value="option2">Pb</label>
+            <label><input type="radio" value="option3">Au</label> <!--Answer-->
+            <label><input type="radio" value="option4">Gd</label>
 
         </div>
 
@@ -51,16 +51,17 @@
         
         <div id="question3-answers">
 
-            <input type="radio">Jenny</input> <!--Answer-->
-            <input type="radio">Sue</input> 
-            <input type="radio">Melony</input> 
-            <input type="radio">Patricia</input>
+            <label><input type="radio" value="option1">Jenny</label><!--Answer-->
+            <label><input type="radio" value="option2">Sue</label>
+            <label><input type="radio" value="option3">Melony</label>
+            <label><input type="radio" value="option4">Patricia</label>
             
         </div>
 
 
         
-        <button type="submit" onclick="showNextQuestion()">Submit</button>
+        <button type="submit" onclick="showNextQuestion()">Next Question</button>
+        <button type="submit" onclick="submitAnswers()">Submit</button>
         
 
         <h3 id="quizScore">Your quiz score:</h3>
