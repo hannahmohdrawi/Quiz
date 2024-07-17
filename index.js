@@ -1,19 +1,17 @@
-let quizScore = document.getElementById("quizNumber");
-
 let teamSubmissionButton = document.getElementById("submitTeamName");
 teamSubmissionButton.addEventListener("click", teamNameSubmission);
 
 
 function teamNameSubmission(){
     let teamName = document.getElementById("enteredTeamName").value;
-    let intro = document.getElementsByClassName("intro")[0];
+    let intro = document.querySelector(".intro");
     intro.classList.add("introHide");
 
     showMiddleScreen(teamName);
 }
 
 function showMiddleScreen(teamName){
-    let continueScreen = document.getElementsByClassName("middle-screen")[0];
+    let continueScreen = document.querySelector(".middle-screen");
     let welcomeMsg = document.getElementById("welcome-message");
     welcomeMsg.textContent = `Welcome ${teamName}! 🎈`
     continueScreen.classList.add("showMiddle");
@@ -34,10 +32,9 @@ function submitAnswers(){
         question3: "Jenny"
     };
 
-    let questions = document.getElementsByClassName("questions");
-    let question1Answer = document.querySelector('input[name = "question1-answers"]:checked');
-    let question2Answer = document.querySelector('input[name = "question2-answers"]:checked');
-    let question3Answer = document.querySelector('input[name = "question3-answers"]:checked');
+    let question1Answer = document.querySelector('input[name = "question1"]:checked');
+    let question2Answer = document.querySelector('input[name = "question2"]:checked');
+    let question3Answer = document.querySelector('input[name = "question3"]:checked');
 
     if (question1Answer === correctAnswers.question1){
         score++;
@@ -63,23 +60,25 @@ function submitAnswers(){
     */
 
     document.querySelector(".quiz-questions").classList.remove("showQuestions");
-    document.getElementById("quizScore").classList.add("showQuestions");
-    document.getElementById("quizNumber").classList.add("showQuestions");
+    document.querySelector(".quiz-container").classList.add("showQuestions");
+    
 
 }
 
 let currentQuestionIndex = 0;
 
-
 function showNextQuestion(){
-    let allQuestions = document.getElementsByClassName("question");
+    let allQuestions = document.querySelectorAll(".question");
+    let allAnswers = document.querySelectorAll(".answers");
     
     if(currentQuestionIndex > 0){
         allQuestions[currentQuestionIndex - 1].classList.remove("showQuestions");
+        allAnswers[currentQuestionIndex - 1].classList.remove("showQuestions");
     }
 
     if(currentQuestionIndex < allQuestions.length){
         allQuestions[currentQuestionIndex].classList.add("showQuestions");
+        allAnswers[currentQuestionIndex].classList.add("showQuestions");
         currentQuestionIndex++;
     }
 }

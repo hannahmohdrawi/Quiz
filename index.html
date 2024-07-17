@@ -25,36 +25,36 @@
 
     
     <div class="quiz-questions">
-        <h3 id ="question1" class="questions">How many eyes does a honeybee have?</h3>
+        <h3 id ="question1" class="question">How many eyes does a honeybee have?</h3>
         
-        <div id="question1-answers">
+        <div id="question1-answers" class="answers">
             
-            <label><input type="radio" value="option1">4</label>
-            <label><input type="radio" value="option2">5</label> <!--Answer-->
-            <label><input type="radio" value="option3">6</label>
-            <label><input type="radio" value="option4">7</label>
+            <label><input type="radio" value="option1" name="question1">4</label>
+            <label><input type="radio" value="option2" name="question1">5</label> <!--Answer-->
+            <label><input type="radio" value="option3" name="question1">6</label>
+            <label><input type="radio" value="option4" name="question1">7</label>
             
         </div>
 
-        <h3 id="question2" class="questions">What is the chemical symbol for Gold?</h3>
+        <h3 id="question2" class="question">What is the chemical symbol for Gold?</h3>
         
-        <div id="question2-answers">
+        <div id="question2-answers" class="answers">
 
-            <label><input type="radio" value="option1">Go</label>
-            <label><input type="radio" value="option2">Pb</label>
-            <label><input type="radio" value="option3">Au</label> <!--Answer-->
-            <label><input type="radio" value="option4">Gd</label>
+            <label><input type="radio" value="option1" name="question2">Go</label>
+            <label><input type="radio" value="option2" name="question2">Pb</label>
+            <label><input type="radio" value="option3" name="question2">Au</label> <!--Answer-->
+            <label><input type="radio" value="option4" name="question2">Gd</label>
 
         </div>
 
-        <h3 id="question3" class="questions">What is a female donkey called?</h3>
+        <h3 id="question3" class="question">What is a female donkey called?</h3>
         
-        <div id="question3-answers">
+        <div id="question3-answers" class="answers">
 
-            <label><input type="radio" value="option1">Jenny</label><!--Answer-->
-            <label><input type="radio" value="option2">Sue</label>
-            <label><input type="radio" value="option3">Melony</label>
-            <label><input type="radio" value="option4">Patricia</label>
+            <label><input type="radio" value="option1" name="question3">Jenny</label><!--Answer-->
+            <label><input type="radio" value="option2" name="question3">Sue</label>
+            <label><input type="radio" value="option3" name="question3">Melony</label>
+            <label><input type="radio" value="option4" name="question3">Patricia</label>
             
         </div>
 
@@ -63,9 +63,11 @@
         <button type="submit" onclick="showNextQuestion()">Next Question</button>
         <button type="submit" onclick="submitAnswers()">Submit</button>
         
-
-        <h3 id="quizScore">Your quiz score:</h3>
-        <h2 id ="quizScore">0</h2>
+        <div class="score-container">
+            <h3>Your quiz score:</h3>
+            <h2 id ="quizScore">0</h2>
+        </div>
+        
 
     </div>
     
