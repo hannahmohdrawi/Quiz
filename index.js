@@ -18,9 +18,28 @@ function showMiddleScreen(teamName){
 }
 
 function showQuestionScreen(){
-    //Problem with this 
     document.querySelector(".middle-screen").classList.remove("showMiddle");
     document.querySelector(".quiz-questions").classList.add("showQuestions");
+    showNextQuestion();
+}
+
+let currentQuestionIndex = 0;
+
+function showNextQuestion(){
+    let allQuestions = document.querySelectorAll(".question-container");
+    
+    if(currentQuestionIndex > 0){
+        allQuestions[currentQuestionIndex - 1].classList.remove("showQuestionContainer");
+        
+    }
+
+    if(currentQuestionIndex < allQuestions.length){
+        allQuestions[currentQuestionIndex].classList.add("showQuestionContainer");
+        currentQuestionIndex++;
+    }else{
+        document.getElementById("nextButton").style.display ="none";
+        document.getElementById("submitButton").style.display = "block";
+    }
 }
 
 let score = 0;
@@ -32,53 +51,25 @@ function submitAnswers(){
         question3: "Jenny"
     };
 
-    let question1Answer = document.querySelector('input[name = "question1"]:checked');
-    let question2Answer = document.querySelector('input[name = "question2"]:checked');
-    let question3Answer = document.querySelector('input[name = "question3"]:checked');
+    let question1Answer = document.querySelector('input[name="question1"]:checked');
+    let question2Answer = document.querySelector('input[name="question2"]:checked');
+    let question3Answer = document.querySelector('input[name="question3"]:checked');
 
     if (question1Answer === correctAnswers.question1){
         score++;
-        console.log("Hello");
     };
-
     if (question2Answer === correctAnswers.question2){
         score++;
     };
-
     if (question3Answer === correctAnswers.question3){
         score++;
     };
 
 
-    //Fix
+    
     document.getElementById("quizScore").textContent = score;
-
-    /*
-    for (let i = 0; i < questions.length; i++) {
-        questions[i].classList.remove("showQuestions");
-    }
-    */
-
     document.querySelector(".quiz-questions").classList.remove("showQuestions");
-    document.querySelector(".quiz-container").classList.add("showQuestions");
-    
-
+    document.querySelector(".score-container").style.display = "block";
 }
 
-let currentQuestionIndex = 0;
 
-function showNextQuestion(){
-    let allQuestions = document.querySelectorAll(".question");
-    let allAnswers = document.querySelectorAll(".answers");
-    
-    if(currentQuestionIndex > 0){
-        allQuestions[currentQuestionIndex - 1].classList.remove("showQuestions");
-        allAnswers[currentQuestionIndex - 1].classList.remove("showQuestions");
-    }
-
-    if(currentQuestionIndex < allQuestions.length){
-        allQuestions[currentQuestionIndex].classList.add("showQuestions");
-        allAnswers[currentQuestionIndex].classList.add("showQuestions");
-        currentQuestionIndex++;
-    }
-}
