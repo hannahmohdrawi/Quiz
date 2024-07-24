@@ -26,9 +26,11 @@
     
     <div class="quiz-questions">
         <div class="quiz-container">
-            <h3 id ="question1" class="question">How many eyes does a honeybee have?</h3>
+            
         
-            <div id="question1-answers" class="answers">
+            <div id="question1" class="answers">
+
+                <h3 class="question">How many eyes does a honeybee have?</h3>
                 
                 <label><input type="radio" value="option1" name="question1">4</label>
                 <label><input type="radio" value="option2" name="question1">5</label> <!--Answer-->
@@ -37,9 +39,11 @@
                 
             </div>
 
-            <h3 id="question2" class="question">What is the chemical symbol for Gold?</h3>
             
-            <div id="question2-answers" class="answers">
+            
+            <div id="question2" class="answers">
+
+                <h3 class="question">What is the chemical symbol for Gold?</h3>
 
                 <label><input type="radio" value="option1" name="question2">Go</label>
                 <label><input type="radio" value="option2" name="question2">Pb</label>
@@ -48,9 +52,11 @@
 
             </div>
 
-            <h3 id="question3" class="question">What is a female donkey called?</h3>
             
-            <div id="question3-answers" class="answers">
+            
+            <div id="question3" class="answers">
+
+                <h3 class="question">What is a female donkey called?</h3>
 
                 <label><input type="radio" value="option1" name="question3">Jenny</label><!--Answer-->
                 <label><input type="radio" value="option2" name="question3">Sue</label>
@@ -64,7 +70,7 @@
         
 
         
-        <button type="submit" onclick="showNextQuestion()">Next Question</button>
+        <button type="next" id="nextBtn" onclick="showNextQuestion()">Next Question</button>
         <button type="submit" onclick="submitAnswers()">Submit</button>
         
         <div class="score-container">

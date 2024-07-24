@@ -1,5 +1,5 @@
 html{
-    background-color: hsl(0, 0%, 13%);
+    background-color: hsl(42, 55%, 85%);
 }
 
 body:not(h1, h2){
@@ -8,9 +8,11 @@ body:not(h1, h2){
     font-family: 'Lato';
     border: solid rgb(255, 111, 0) 10px;
     box-shadow: 5px 5px grey;
-    margin-top: 15vh;
-    margin-left: 200px;
-    margin-right: 200px;
+    margin-top: 10vh;
+    margin-right: 10vh;
+    margin-left: 10vh;
+    
+    margin-bottom: 25vh;
     color: white;
 }
 h1, h2{

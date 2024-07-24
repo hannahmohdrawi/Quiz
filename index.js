@@ -1,5 +1,6 @@
 let teamSubmissionButton = document.getElementById("submitTeamName");
 teamSubmissionButton.addEventListener("click", teamNameSubmission);
+let currentQuestionIndex = 0;
 
 
 function teamNameSubmission(){
@@ -20,13 +21,21 @@ function showMiddleScreen(teamName){
 function showQuestionScreen(){
     document.querySelector(".middle-screen").classList.remove("showMiddle");
     document.querySelector(".quiz-questions").classList.add("showQuestions");
+
+    let question1 = document.getElementById("question1");
+    let question2 = document.getElementById("question2");
+    let question3 = document.getElementById("question3");
+
+    let questions = [question1, question2, question3];
+
     showNextQuestion();
 }
 
-let currentQuestionIndex = 0;
+    
 
 function showNextQuestion(){
     let allQuestions = document.querySelectorAll(".question-container");
+    
     
     if(currentQuestionIndex > 0){
         allQuestions[currentQuestionIndex - 1].classList.remove("showQuestionContainer");
@@ -71,5 +80,8 @@ function submitAnswers(){
     document.querySelector(".quiz-questions").classList.remove("showQuestions");
     document.querySelector(".score-container").style.display = "block";
 }
+
+document.getElementById("nextBtn").addEventListener("click", showNextQuestion);
+
 
 
