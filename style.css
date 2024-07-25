@@ -61,11 +61,11 @@ button{
     font-size: 1.5rem;
 }
 
-.question-container{
+.hideQuestion{
     display: none;
 }
 
-.showQuestionContainer{
+.showQuestion{
     display: block;
 }
 

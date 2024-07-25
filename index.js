@@ -22,34 +22,36 @@ function showQuestionScreen(){
     document.querySelector(".middle-screen").classList.remove("showMiddle");
     document.querySelector(".quiz-questions").classList.add("showQuestions");
 
-    let question1 = document.getElementById("question1");
-    let question2 = document.getElementById("question2");
-    let question3 = document.getElementById("question3");
-
-    let questions = [question1, question2, question3];
-
     showNextQuestion();
 }
 
     
 
-function showNextQuestion(){
-    let allQuestions = document.querySelectorAll(".question-container");
-    
-    
-    if(currentQuestionIndex > 0){
-        allQuestions[currentQuestionIndex - 1].classList.remove("showQuestionContainer");
-        
+
+
+function showNextQuestion() {
+    let allQuestions = document.querySelectorAll(".quiz-container");
+
+    // Hide all questions initially
+    allQuestions.forEach(question => {
+        question.classList.add("hideQuestion");
+        question.classList.remove("showQuestion");
+    });
+
+    // Show the current question
+    if (currentQuestionIndex < allQuestions.length) {
+        allQuestions[currentQuestionIndex].classList.add("showQuestion");
+        allQuestions[currentQuestionIndex].classList.remove("hideQuestion");
+        currentQuestionIndex++;
     }
 
-    if(currentQuestionIndex < allQuestions.length){
-        allQuestions[currentQuestionIndex].classList.add("showQuestionContainer");
-        currentQuestionIndex++;
-    }else{
-        document.getElementById("nextButton").style.display ="none";
+    // Hide next button and show submit button if it's the last question
+    if (currentQuestionIndex >= allQuestions.length) {
+        document.getElementById("nextButton").style.display = "none";
         document.getElementById("submitButton").style.display = "block";
     }
 }
+
 
 let score = 0;
 
